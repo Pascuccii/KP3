@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link href="reset.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+	<script type="text/javascript" src="server.js"></script>
+	<title>АП Регистрация</title>
+</head>
+<body>
+<div class="wrapper">
+	<div class="header">
+		<div class="logo"><a href="">Автомобильная промышленность</a><p>Регистрация</p></div>
+	</div>
+	<div class="content">
+		<div class="row">
+			<label>Имя пользователя</label>
+			<input type="text" id="username">
+		</div>
+		<div class="row">
+			<label>Пароль</label>
+			<input type="password" id="password">
+		</div>
+		<div class="row">
+			<button type="submit" onclick="reg($('username').value, $('password').value)">Зарегистрироваться</button>
+			<label id="regWarning"></label>
+		</div>
+	</div>
+</div>
+</body>
+<script src="server.js"></script>
+</html>

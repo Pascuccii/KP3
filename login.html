@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<link href="reset.css" rel="stylesheet" type="text/css">
+		<link href="style.css" rel="stylesheet" type="text/css">
+		<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+		<script type="text/javascript" src="server.js"></script>
+		<title>АП Авторизация</title>
+	</head>
+	<body>
+		<div class="wrapper">
+			<div class="header">
+				<div class="logo"><a href="">Автомобильная промышленность</a><p>Вход</p></div>
+			</div>
+			<div class="content">
+				<div class="row">
+					<label>Имя пользователя</label>
+					<input type="text" id="login">
+				</div>
+				<div class="row">
+					<label>Пароль</label>
+					<input type="password" id="pass">
+				</div>
+				<div class="row">
+					<button type="submit" id="loginButton" onclick="auth($('login').value, $('pass').value)">Войти</button>
+					<label id="authWarning"></label>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script>
+		function loginEnter(e){
+			if (e.key === "Enter") {
+				auth($('login').value, $('pass').value)
+			}
+		}
+		addEventListener("keydown", loginEnter);
+	</script>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link href="reset.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="style2.css">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.3.js"></script>
+    <title>Интерактив</title>
+</head>
+<body>
+<div class="wrapper">
+    <div class="header">
+        <div class="logo"><a href="history.html">Автомобильная промышленность</a>
+            <p>Интерактив</p></div>
+        <ul class="nav">
+            <li><a href="history.html">История</a></li>
+            <li><a href="companies.html">Компании</a></li>
+            <li><a href="gallery.html">Галерея</a></li>
+            <li><a href="articles.html">Статьи</a></li>
+            <li><a href="interactive.html" class="active">Интерактив</a></li>
+            <li><a href="login.html">Выход</a></li>
+        </ul>
+    </div>
+    <div class="content">
+        <div id="container">
+            <div id="tasks">
+                <div id="notification">Список пуст</div>
+                <ul id="tasksList">
+
+                </ul>
+            </div>
+            <div id="footer">
+                <input type="text" id="taskInput">
+                <button id="taskAdd" onclick="addItem()">+</button>
+            </div>
+        </div>
+		<div id="blueRect"></div>
+    </div>
+    <div class="footer">
+		<button id="startButton"  onclick="startAnimation()">Анимация</button>
+		<p id="movingObject">O</p>
+    </div>
+</div>
+</body>
+<script type="text/javascript" src="server.js"></script>
+<script>
+	function generateColor() {
+		return '#' + Math.floor(Math.random()*16777215).toString(16)
+	}
+
+	function moveRect(e){
+
+		var blueRect = document.getElementById("blueRect");
+		var cs = window.getComputedStyle(blueRect);
+
+		var left = parseInt(cs.marginLeft);
+		var top = parseInt(cs.marginTop);
+
+		blueRect.style.backgroundColor = generateColor();
+		switch(e.keyCode){
+			case 37:  // если нажата клавиша влево
+				if(left>0)
+					blueRect.style.marginLeft = left - 25 + "px";
+				break;
+			case 38:   // если нажата клавиша вверх
+				if(top>0)
+					blueRect.style.marginTop = top - 25 + "px";
+				break;
+			case 39:   // если нажата клавиша вправо
+				if(left < document.documentElement.clientWidth - 100)
+					blueRect.style.marginLeft = left + 25 + "px";
+				break;
+			case 40:   // если нажата клавиша вниз
+				if(top < document.documentElement.clientHeight - 100)
+					blueRect.style.marginTop = top + 25 + "px";
+				break;
+		}
+	}
+
+	addEventListener("keydown", moveRect);
+</script>
+</html>
