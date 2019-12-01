@@ -31,7 +31,7 @@
             </div>
             <div id="footer">
                 <input type="text" id="taskInput">
-                <button id="taskAdd" onclick="addItem()">+</button>
+                <button id="taskAdd" onclick="addItem()">+</button><button onclick="toJSON()">Показать в JSON</button>
             </div>
         </div>
 		<div id="blueRect"></div>
@@ -78,5 +78,21 @@
 	}
 
 	addEventListener("keydown", moveRect);
+</script>
+<script>
+    $(document).ready(function(){
+        $("#taskInput").keydown(function(){
+            $("input").css("background-color", "yellow");
+        });
+        $("#taskInput").keyup(function(){
+            $("input").css("background-color", "pink");
+        });
+        $("#taskInput").focusout(function(){
+            $("input").css("background-color", "blue");
+        });
+        $("#taskInput").focusin(function(){
+            $("input").css("background-color", "red");
+        });
+    });
 </script>
 </html>

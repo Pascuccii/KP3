@@ -65,8 +65,7 @@ function startAnimation() {
     if (inAction === false) {
         $("#movingObject").addClass("startMoving");
         inAction = true;
-    }
-    else {
+    } else {
         $("#movingObject").removeClass("startMoving");
         inAction = false;
     }
@@ -76,7 +75,7 @@ function addItem() {
     if (!$taskInput.val()) {
         return false;
     }
-    $tasksList.append("<li><button class='deleteButton' onclick='deleteItem(this)' '>&#10006</button>" + $taskInput.val() + "</li>")
+    $tasksList.append("<li><button class='deleteButton' onclick='deleteItem(this)'>&#10006</button>" + $taskInput.val() + "</li>");
     $taskInput.val("");
 
     displayNotification();
@@ -90,3 +89,40 @@ function deleteItem(element) {
         displayNotification();
     }, 5);
 }
+
+/*
+function toJSON() {
+    var list = [];
+    $('#list').each(function(idx, item){
+        list.push({
+            text: item.content
+        });
+    });
+    alert(JSON.stringify(list, null, "  "));
+
+    /!*var element = document.getElementById('');
+    var html = element.innerHTML;
+    var data = { html: html };
+    var json = JSON.stringify(data);
+    //alert(json);*!/
+}
+*/
+
+function toJSON() {
+    var allDealers = [];
+    var obj = {title: "none", address: "none", locale: "none", phone: "none"};
+    var items = $("#dealersList").find("ul");
+    console.log(items);
+
+    for (let i = 0; i < 6; i++) {
+        var siblings = items.eq(i).children();
+        obj.title = siblings.eq(0).text();
+        obj.address = siblings.eq(1).text();
+        obj.locale = siblings.eq(2).text();
+        obj.phone = siblings.eq(3).text();
+        allDealers.push(obj.stringify());
+    }
+    ;
+
+    console.log(allDealers);
+};
