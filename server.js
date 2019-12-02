@@ -90,24 +90,6 @@ function deleteItem(element) {
     }, 5);
 }
 
-/*
-function toJSON() {
-    var list = [];
-    $('#list').each(function(idx, item){
-        list.push({
-            text: item.content
-        });
-    });
-    alert(JSON.stringify(list, null, "  "));
-
-    /!*var element = document.getElementById('');
-    var html = element.innerHTML;
-    var data = { html: html };
-    var json = JSON.stringify(data);
-    //alert(json);*!/
-}
-*/
-
 function toJSON() {
     var allDealers = [];
     var obj = {title: "none", address: "none", locale: "none", phone: "none"};
@@ -116,13 +98,39 @@ function toJSON() {
 
     for (let i = 0; i < 6; i++) {
         var siblings = items.eq(i).children();
-        obj.title = siblings.eq(0).text();
-        obj.address = siblings.eq(1).text();
-        obj.locale = siblings.eq(2).text();
-        obj.phone = siblings.eq(3).text();
-        allDealers.push(obj.stringify());
+        var obj1 = Object.create(obj);
+        obj1.title = siblings.eq(0).text();
+        obj1.address = siblings.eq(1).text();
+        obj1.locale = siblings.eq(2).text();
+        obj1.phone = siblings.eq(3).text();
+        allDealers.push(obj1);
     }
     ;
+    alert(JSON.stringify(allDealers));
+};
 
-    console.log(allDealers);
+function toJSONObject() {
+    var person = {
+        name: "none",
+        surname: "none",
+        patronymic: "none",
+        email: "none",
+        age: 0,
+        phone: "none",
+        group: 0,
+        id: 0
+    };
+    var items = $("#JSONObject").find("ul");
+    console.log(items);
+    var siblings = items.children();
+    var obj1 = Object.create(person);
+    obj1.name = siblings.eq(0).text();
+    obj1.surname = siblings.eq(1).text();
+    obj1.patronymic = siblings.eq(2).text();
+    obj1.email = siblings.eq(3).text();
+    obj1.age = siblings.eq(4).text();
+    obj1.phone = siblings.eq(5).text();
+    obj1.group = siblings.eq(6).text();
+    obj1.id = siblings.eq(7).text();
+    alert(JSON.stringify(obj1));
 };

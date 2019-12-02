@@ -31,66 +31,66 @@
             </div>
             <div id="footer">
                 <input type="text" id="taskInput">
-                <button id="taskAdd" onclick="addItem()">+</button><button onclick="toJSON()">Показать в JSON</button>
+                <button id="taskAdd" onclick="addItem()">+</button>
             </div>
         </div>
-		<div id="blueRect"></div>
+        <div id="blueRect"></div>
     </div>
     <div class="footer">
-		<button id="startButton"  onclick="startAnimation()">Анимация</button>
-		<p id="movingObject">O</p>
+        <button id="startButton" onclick="startAnimation()">Анимация</button>
+        <p id="movingObject">O</p>
     </div>
 </div>
 </body>
 <script type="text/javascript" src="server.js"></script>
 <script>
-	function generateColor() {
-		return '#' + Math.floor(Math.random()*16777215).toString(16)
-	}
+    function generateColor() {
+        return '#' + Math.floor(Math.random() * 16777215).toString(16)
+    }
 
-	function moveRect(e){
+    function moveRect(e) {
 
-		var blueRect = document.getElementById("blueRect");
-		var cs = window.getComputedStyle(blueRect);
+        var blueRect = document.getElementById("blueRect");
+        var cs = window.getComputedStyle(blueRect);
 
-		var left = parseInt(cs.marginLeft);
-		var top = parseInt(cs.marginTop);
+        var left = parseInt(cs.marginLeft);
+        var top = parseInt(cs.marginTop);
 
-		blueRect.style.backgroundColor = generateColor();
-		switch(e.keyCode){
-			case 37:  // если нажата клавиша влево
-				if(left>0)
-					blueRect.style.marginLeft = left - 25 + "px";
-				break;
-			case 38:   // если нажата клавиша вверх
-				if(top>0)
-					blueRect.style.marginTop = top - 25 + "px";
-				break;
-			case 39:   // если нажата клавиша вправо
-				if(left < document.documentElement.clientWidth - 100)
-					blueRect.style.marginLeft = left + 25 + "px";
-				break;
-			case 40:   // если нажата клавиша вниз
-				if(top < document.documentElement.clientHeight - 100)
-					blueRect.style.marginTop = top + 25 + "px";
-				break;
-		}
-	}
+        blueRect.style.backgroundColor = generateColor();
+        switch (e.keyCode) {
+            case 37:  // если нажата клавиша влево
+                if (left > 0)
+                    blueRect.style.marginLeft = left - 25 + "px";
+                break;
+            case 38:   // если нажата клавиша вверх
+                if (top > 0)
+                    blueRect.style.marginTop = top - 25 + "px";
+                break;
+            case 39:   // если нажата клавиша вправо
+                if (left < document.documentElement.clientWidth - 100)
+                    blueRect.style.marginLeft = left + 25 + "px";
+                break;
+            case 40:   // если нажата клавиша вниз
+                if (top < document.documentElement.clientHeight - 100)
+                    blueRect.style.marginTop = top + 25 + "px";
+                break;
+        }
+    }
 
-	addEventListener("keydown", moveRect);
+    addEventListener("keydown", moveRect);
 </script>
 <script>
-    $(document).ready(function(){
-        $("#taskInput").keydown(function(){
+    $(document).ready(function () {
+        $("#taskInput").keydown(function () {
             $("input").css("background-color", "yellow");
         });
-        $("#taskInput").keyup(function(){
+        $("#taskInput").keyup(function () {
             $("input").css("background-color", "pink");
         });
-        $("#taskInput").focusout(function(){
+        $("#taskInput").focusout(function () {
             $("input").css("background-color", "blue");
         });
-        $("#taskInput").focusin(function(){
+        $("#taskInput").focusin(function () {
             $("input").css("background-color", "red");
         });
     });

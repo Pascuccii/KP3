@@ -176,6 +176,10 @@ button {
     font-size: 30px;
 }
 
+.dealer-summary-list {
+    margin-top: 10px;
+}
+
 button:hover {
     background-position: 0 -15px;
 }
@@ -415,20 +419,26 @@ ul.rightNav li a:hover {
     }
 }
 
-html, body{
-    margin:0;
-    overflow:hidden;
+html, body {
+    margin: 0;
+    overflow: auto;
 }
 
-#blueRect{
+#blueRect {
     position: absolute;
-    width:100px;
-    height:100px;
-    background-color:blue;
+    width: 100px;
+    height: 100px;
+    background-color: blue;
 }
 
-#startButton{
+#startButton {
     position: absolute;
     bottom: 50px;
 }
-
+#dealersList,
+#JSONObject {
+    font-weight: bold;
+    font-size: 15px;
+    background-color: #cfcacc;
+    margin-top: 15px;
+}
