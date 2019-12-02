@@ -11,9 +11,9 @@ html, body {
 body {
     background: #e4e4e4 url("images/bg.jpg") repeat;
     font-family: Arial, serif;
-    font-size: 12px;
+    font-size: 16px;
     color: #4b4b4b;
-    line-height: 18px;
+    line-height: 22px;
     text-shadow: 0 1px 0 white;
 }
 
