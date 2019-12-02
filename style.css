@@ -373,6 +373,7 @@ ul.rightNav li a:hover {
 }
 
 .main img {
+    margin-bottom: 15px;
     margin-right: 15px;
     border: 10px solid #cfcfcf;
 }
@@ -441,4 +442,63 @@ html, body {
     font-size: 15px;
     background-color: #cfcacc;
     margin-top: 15px;
+}
+
+.displayNone {
+    display: none;
+}
+
+.tooltip {
+    -webkit-box-shadow: 2px 2px 3px black;
+    box-shadow: 2px 2px 3px black;
+
+    background-color: whitesmoke;
+    border: solid black 1px;
+    padding: 5px;
+    -webkit-text-fill-color: #1eff00;
+}
+
+.bigText {
+    position: center;
+    font-size: 30px;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+div.gallery {
+    -webkit-align-content: center;
+    margin: 5px;
+    border: 1px solid #ccc;
+    float: left;
+    width: 180px;
+    height: 180px;
+}
+
+div.gallery:hover {
+    border: 1px solid #777;
+    background-color: rgba(141, 0, 2, 0.13);
+}
+
+a {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+div.gallery img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
+    height: 112px;
+}
+
+div.desc {
+    padding: 15px;
+    text-align: center;
+    -webkit-text-fill-color: #272727;
+}
+
+.footer {
+    width: 100%;
 }

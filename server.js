@@ -1,16 +1,3 @@
-var send = function (params, func) {
-    var ajax = new XMLHttpRequest();
-    ajax.open('GET', `server.php?${params}`, true);
-    ajax.onreadystatechange = function () {
-        if (ajax.readyState === 4) {
-            if (ajax.status === 200) {
-                func(ajax.responseText);
-            }
-        }
-    };
-    ajax.send(null);
-};
-
 var DATA;
 
 function getFile(fileName) {
@@ -134,3 +121,51 @@ function toJSONObject() {
     obj1.id = siblings.eq(7).text();
     alert(JSON.stringify(obj1));
 };
+
+function showUpHiddens() {
+    var hiddens = $("li:hidden");
+    hiddens.removeClass("displayNone");
+}
+
+function Tooltip() {  // Конструктор для всплывающей подсказки
+    this.tooltip = document.createElement("div"); // Создание div для тени
+    this.tooltip.style.position = "absolute";     // Абсолютное позиционирование.
+    this.tooltip.style.visibility = "hidden";
+    this.tooltip.className = "tooltip";
+    this.tooltip.style.fontSize = 30 + "px";
+    this.tooltip.style.color = "#0edf00";
+}
+
+// Установка содержимого для подсказки и отображение
+Tooltip.prototype.show = function (text, x, y) {
+    this.tooltip.innerHTML = text;             // Текст подсказки
+    this.tooltip.style.left = x + "px";        // Координаты
+    this.tooltip.style.top = y + "px";
+    this.tooltip.style.visibility = "visible";
+
+    // Добавление подсказки в документ если он еще не присутствует.
+    if (this.tooltip.parentNode !== document.body)
+        document.body.appendChild(this.tooltip);
+};
+
+// Функция для скрытия подсказки
+Tooltip.prototype.hide = function () {
+    this.tooltip.style.visibility = "hidden";
+};
+
+window.onload = function () {
+    var d = document.getElementById("blueRect");
+    d.onmousemove = mouseMoveHandler;
+    d.onmouseout = mouseOutHandler;
+}
+
+var t = new Tooltip();
+
+function mouseMoveHandler(e) {
+    if (!e) e = window.event;
+    t.show("Всплывающая подсказка", e.clientX + 10, e.clientY + 10);
+}
+
+function mouseOutHandler() {
+    t.hide();
+}
