@@ -10,7 +10,6 @@ function getFile(fileName) {
 }
 
 function parse(obj) {
-
     DATA = JSON.parse(obj);
 }
 

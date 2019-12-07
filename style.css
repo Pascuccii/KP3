@@ -485,6 +485,7 @@ a {
 a:hover {
     text-decoration: underline;
 }
+
 div.gallery img {
     display: block;
     margin-left: auto;
