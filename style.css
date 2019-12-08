@@ -18,19 +18,19 @@ body {
 }
 
 ::selection {
-    background-color: #a12424;
+    background-color: #3a44a1;
     color: white;
     text-shadow: none;
 }
 
 ::-moz-selection {
-    background-color: #a12424;
+    background-color: #3a44a1;
     color: white;
     text-shadow: none;
 }
 
 a {
-    color: #b60000;
+    color: #2126a3;
     text-decoration: underline;
 }
 
@@ -141,16 +141,16 @@ button {
     color: white;
     font-size: 14px;
     font-weight: bold;
-    background-color: #a12424;
+    background-color: #3a44a1;
     background-repeat: no-repeat;
-    background-image: -ms-linear-gradient(top, #b92c2c, #a12424);
-    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#b92c2c), to(#a12424));
-    background-image: -webkit-linear-gradient(top, #b92c2c, #a12424);
-    background-image: -o-linear-gradient(top, #b92c2c, #a12424);
-    background-image: linear-gradient(top, #b92c2c, #a12424);
-    background-image: -moz-linear-gradient(top, #b92c2c, #a12424);
+    background-image: -ms-linear-gradient(top, #434fc8, #3a44a1);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#434fc8), to(#3a44a1));
+    background-image: -webkit-linear-gradient(top, #434fc8, #3a44a1);
+    background-image: -o-linear-gradient(top, #434fc8, #3a44a1);
+    background-image: linear-gradient(top, #434fc8, #3a44a1);
+    background-image: -moz-linear-gradient(top, #434fc8, #3a44a1);
     filter: progid:dximagetransform.microsoft.gradient(startColorstr='#b92c2c', endColorstr='#a12424', GradientType=0);
-    border: 1px solid #a12424;
+    border: 1px solid #3a44a1;
     padding: 8px 20px;
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3);
     -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3);
@@ -171,7 +171,7 @@ button {
 }
 
 #tasksList li {
-    border: solid #b92c2c;
+    border: solid #3a44a1;
     border-width: 1px 3px 1px 0;
     font-size: 30px;
 }
@@ -235,7 +235,7 @@ table.bordered tbody tr:hover {
 
 /*Шапка*/
 .header {
-    border-bottom: 30px solid #a12424;
+    border-bottom: 30px solid #3a44a1;
     padding: 40px 0 0 0;
     overflow: hidden;
 }
@@ -243,7 +243,7 @@ table.bordered tbody tr:hover {
 .logo {
     display: inline-block;
     float: left;
-    color: #a12424;
+    color: #3a44a1;
     font-weight: bold;
 }
 
@@ -298,11 +298,11 @@ ul.nav li a {
 }
 
 ul.nav li a.active {
-    color: #a12424;
+    color: #3a44a1;
 }
 
 ul.nav li a:hover {
-    color: #a12424;
+    color: #3a44a1;
 }
 
 /*Контент*/
@@ -347,7 +347,7 @@ ul.rightNav li a:hover {
 
 .block {
     margin: 0 0 20px 0;
-    border: 1px solid #a12424;
+    border: 1px solid #3a44a1;
     background-color: #ececec;
 }
 
